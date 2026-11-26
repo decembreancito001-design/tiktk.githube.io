@@ -1,1 +1,140 @@
-tiktk.githube.io
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Formulaire d'inscription</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f1f2f6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.container {
+    background: white;
+    width: 90%;
+    max-width: 400px;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px #0002;
+}
+
+h2 {
+    text-align: center;
+    color: #222;
+}
+
+p {
+    text-align: center;
+    color: #666;
+}
+
+input {
+    width: 100%;
+    padding: 14px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 7px;
+    font-size: 15px;
+}
+
+button {
+    width: 100%;
+    padding: 14px;
+    background: #0866ff;
+    color: white;
+    border: none;
+    border-radius: 7px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #004acb;
+}
+
+#message {
+    text-align: center;
+    margin-top: 15px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>Créer un compte</h2>
+
+<p>Remplissez les informations ci-dessous.</p>
+
+<form id="inscription">
+
+<input
+type="text"
+id="nom"
+placeholder="Nom complet"
+required>
+
+<input
+type="email"
+id="email"
+placeholder="Adresse e-mail"
+required>
+
+<input
+type="tel"
+id="telephone"
+placeholder="+509XXXXXXXX"
+pattern="(\+509)?[0-9]{8}"
+title="Entrez un numéro haïtien valide."
+required>
+
+<label>
+<input type="checkbox" required style="width:auto">
+J'accepte que mes informations soient utilisées
+pour cette démonstration.
+</label>
+
+<br><br>
+
+<button type="submit">S'inscrire</button>
+
+</form>
+
+<div id="message"></div>
+
+</div>
+
+<script>
+
+document.getElementById("inscription")
+.addEventListener("submit", function(e) {
+
+    e.preventDefault();
+
+    const nom = document.getElementById("nom").value;
+    const email = document.getElementById("email").value;
+    const telephone = document.getElementById("telephone").value;
+
+    document.getElementById("message").innerHTML =
+    "<h3>Inscription de démonstration réussie !</h3>" +
+    "<p>Bienvenue " + nom + ".</p>";
+
+});
+
+</script>
+
+</body>
+</html>
